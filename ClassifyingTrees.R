@@ -21,7 +21,7 @@ library(dplyr)
 setwd('/groups/masel/sawsanwehbi/Prokaryotic_pfams/')
 getwd()
 
-classified_pfams <- read.csv( 'ClassifiedPFAMs_spr5_NQ.csv', header = T)
+classified_pfams <- read.csv( 'ClassifiedPFAMs.csv', header = T)
 PFAM_IDs <- classified_pfams$PFAM_IDs
 Bacterial_supergroups <- c('CPR', 'PVC', 'FCB', 'Terrabacteria', 'Proteobacteria')
 Archaeal_supergroups <- c('Asgard', 'TACK', 'DPANN', 'Euryarchaeota')
@@ -200,5 +200,5 @@ for ( row in 1:nrow(all_iterations)) {
   
 #depends on the run, name the ancestor vector according to conditions
 classified_pfams <- cbind(PFAM_IDs,robust_classifications )
-write.csv(classified_pfams, 'ClassifiedPFAMs_spr5_NQ.csv', row.names = F)
+write.csv(classified_pfams, 'ClassifiedPFAMs.csv', row.names = F)
 
