@@ -12,13 +12,10 @@ library(dplyr)
 
 ## This script takes Pfams that have been robustly (ie > 6 times) classified as LUCA in the iterative classified 'ClassifyingTrees.R'
 # and re-classifies them as preLUCA or LUCA
-classified_pfams <- read.csv('ClassifiedPFAMs_spr5_NQ.csv', header = T)
+classified_pfams <- read.csv('ClassifiedPFAMs.csv', header = T)
 Bacterial_supergroups <- c('CPR', 'PVC', 'FCB', 'Terrabacteria', 'Proteobacteria')
 Archaeal_supergroups <- c('Asgard', 'TACK', 'DPANN', 'Euryarchaeota')
 All_supergroups <- c(Bacterial_supergroups,Archaeal_supergroups)
-#PFAM_IDs <- classified_pfams$PFAM_IDs[which(grepl('LUCA',
-                  # classified_pfams$robust_classifications6new))]
-
 PFAM_IDs <- classified_pfams$PFAM_IDs[which(grepl('LUCA',
                    classified_pfams$robust_classifications))]
                   
@@ -160,4 +157,4 @@ preLUCAclassified <- classified_pfams$robust_classifications
 preLUCAclassified[which(grepl('LUCA',
         classified_pfams$robust_classifications))] <- classified_ancestor
 classified_pfams <- cbind(classified_pfams,preLUCAclassified)
-write.csv(classified_pfams,'ClassifiedPFAMs_spr5_NQ.csv' , row.names= F)
+write.csv(classified_pfams,'ClassifiedPFAMs.csv' , row.names= F)
