@@ -29,8 +29,7 @@ All_supergroups <- c(Bacterial_supergroups,Archaeal_supergroups)
 classified_ancestor <- vector()
 
 # Read in the tree from a file in newick format
-#for ( i in  1:length(PFAM_IDs)) {
-for ( i in  1:2) {
+for ( i in  1:length(PFAM_IDs)) {
   print(i) 
   # enforceroot trees are NQ.pfam estimated (in iqtree), species-tree reconciled (in generax), midpoint rooted (in R) and DTL-optimized (in generax) in this exact order!
   reconciled.treefile <- read.tree(paste0('EnforceRoot_trees/',PFAM_IDs[i],'_enforceroot.treefile'))
@@ -125,7 +124,7 @@ reconciled.treefile <- midpoint.root(reconciled.treefile)
 
 # iterate 10x while removing most extreme outlier (ie taxa with longest root to tip distance) for robustness
 if (length(reconciled.treefile$tip.label) > 20) {
-  nbiteration <- 10} else { nbiteration <- 1}
+  nbiteration <- 10} else { nbiteration <- 1} # no need to iterate for trees with few taxa
 
 iteration_classified <- vector()
   for (iteration in 1:nbiteration) {
