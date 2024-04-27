@@ -9,6 +9,7 @@ library(ggplot2)
 library(diagis)
 library(phytools)
 library(dplyr)
+library(matrixStats)
 
 
 setwd("~/Desktop/PFAM Trees")
