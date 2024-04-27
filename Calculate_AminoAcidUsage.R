@@ -10,6 +10,7 @@ library(diagis)
 library(phytools)
 library(dplyr)
 library(matrixStats)
+library(deming)
 
 
 setwd("~/Desktop/PFAM Trees")
