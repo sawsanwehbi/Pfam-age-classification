@@ -20,8 +20,8 @@ Archaeal_supergroups <- c('Asgard', 'TACK', 'DPANN', 'Euryarchaeota')
 All_supergroups <- c(Bacterial_supergroups,Archaeal_supergroups)
 Weiss_AAC <- read.csv('AllWeiss_AAC.csv', header = T)
 AA_properties <- read.csv('AminoAcid_properties.csv', header = T)
-Weiss_clans <- Clans[match( Weiss_AAC$LUCA_Pfams,classified_pfams$PFAM_IDs)]
-Weiss_clans <- Weiss_clans[-which(is.na(Weiss_clans))]
+#Weiss_clans <- Clans[match( Weiss_AAC$LUCA_Pfams,classified_pfams$PFAM_IDs)]
+#Weiss_clans <- Weiss_clans[-which(is.na(Weiss_clans))]
 classified_pfams <- read.csv('ClassifiedPFAMs.csv', header = T)
 PFAM_AAC <- read.csv('Pfam_data.csv', header = T)
 Clans_AAC <- read.csv('Clan_data.csv', header = T)
@@ -53,7 +53,7 @@ for ( i in 1:nrow(PFAM_AAC)) {
   else {
     group_phylostrata[i] <- 'postLUCA' 
   } }
-PFAM_AAC <- PFAM_AAC[-which(PFAM_AAC$Clans == "character(0)"),] #obsolete pfams
+#PFAM_AAC <- PFAM_AAC[-which(PFAM_AAC$Clans == "character(0)"),] #obsolete pfams
 
 ##### Get Clans AAC ######
 # This loop function shows how to classify clans based on their Pfams
