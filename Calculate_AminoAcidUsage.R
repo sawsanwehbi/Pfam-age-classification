@@ -24,6 +24,7 @@ AA_properties <- read.csv('AminoAcid_properties.csv', header = T)
 #Weiss_clans <- Weiss_clans[-which(is.na(Weiss_clans))]
 classified_pfams <- read.csv('ClassifiedPFAMs.csv', header = T)
 PFAM_AAC <- read.csv('Pfam_data.csv', header = T)
+PFAM_AAC$ancestor[which(PFAM_AAC$avg_transfer > 0.6)]  <- 'unclassifiable' # The 15 high HGT pfams
 Clans_AAC <- read.csv('Clan_data.csv', header = T)
 
 ##### ranking phylostrata ####
