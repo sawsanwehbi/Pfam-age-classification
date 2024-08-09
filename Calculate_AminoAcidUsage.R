@@ -155,10 +155,10 @@ ggplot(ordervsusage_df, aes(y = as.numeric(Trifonov_order),
         legend.text=element_text(size=14), legend.title = element_text(size=16,,face="bold")) + 
   scale_fill_brewer(palette="Dark2") +
   theme(legend.position = c(0.15, 0.18)) + xlim(0.77,1.11) +
-  geom_line(aes(y = predict(clan_model)), linewidth = 1,color = 'black') +
+  geom_line(aes(y = predict(clan_wls_model)), linewidth = 1,color = 'black') +
   annotate(geom="text", y=5, x=0.95, label=paste0("Weighted ",paste0('R',supsc('2')), "= 0.37"), color="black", size = 10) +
   annotate(geom="text", y=4, x=0.95, label="p = 0.002", color="black", size = 10) +
-  geom_ribbon(aes(ymin=clan_confinterval$.lower, ymax=clan_confinterval$.upper), colour=NA, alpha=0.3)
+  geom_ribbon(aes(ymin=clan_wls_confinterval$.lower, ymax=clan_wls_confinterval$.upper), colour=NA, alpha=0.3)
 
 ### preluca vs luca MODEL 2 regression plot ####
 # save pdf as 9.08 and 8.14
