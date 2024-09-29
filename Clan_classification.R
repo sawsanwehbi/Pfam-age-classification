@@ -1,6 +1,6 @@
 ## This code classifies Clan ages based on the ages of its Pfam constituents
 
-PFAM_AAC <- read.csv('Pfam_ancestors.csv', header = T)
+PFAM_AAC <- read.csv('Pfam_contempAAC.csv', header = T)
 PFAM_AAC$ancestor[which(PFAM_AAC$avg_transfer > 0.6)]  <- 'unclassifiable'
 unique_Clans <- unique(PFAM_AAC$Clans)
 Clan_ancestor <- vector()
