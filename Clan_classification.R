@@ -32,3 +32,7 @@ for ( i in 1:length(unique_Clans)) {
           & !'unclassifiable' %in% PFAM_AAC$ancestor[which(PFAM_AAC$Clans %in% unique_Clans[i])]) 
   {Clan_ancestor[i] <- 'modern' }
   else {  Clan_ancestor[i] <- 'unclassifiable'}}
+
+Clan_ancestors_df <- data.frame(unique_Clans,Clan_ancestor)
+colnames(Clan_ancestors_df) <- c("Clans", "Clan_ancestor")
+write.csv(Clan_ancestors_df, 'Clan_ancestors.csv', row.names = FALSE)
