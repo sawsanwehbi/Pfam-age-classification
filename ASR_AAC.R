@@ -17,7 +17,7 @@ colnames(Pfam_ASRprobabilities)[3:22] <- gsub('p_',"", colnames(Pfam_ASRprobabil
 PFAM_IDs <- PFAM_AAC$pfamIDs
 
 # Run to get ancestral frequencies of TM sites in TM pfams
-#ancestral_tm_sites_df <- read.csv( 'ancestral_tm_sites.csv', header = T)
+#ancestral_tm_sites_df <- read.csv( 'ancestral_DEEPtm_sites.csv', header = T)
 #PFAM_IDs <- ancestral_tm_sites_df$TM_Pfams
 
 ## Get ASR probability distribution of AA frequencies at NODE 1
@@ -41,5 +41,5 @@ pfam_asr_aac_df <- pfam_asr_aac_df[-1,]
 colnames(pfam_asr_aac_df) <- names( pfam_asr_seq)
 pfam_asr_aac_df <- cbind(PFAM_IDs, pfam_asr_aac_df)
 write.csv(pfam_asr_aac_df, 'pfam_asr_aac_5seq0.4.csv') 
-#write.csv(pfam_asr_aac_df, 'pfam_asr_aac_5seq0.4_TM.csv') 
+#write.csv(pfam_asr_aac_df, 'pfam_asr_aac_5seq0.4_DEEPTM.csv') 
 
