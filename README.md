@@ -6,6 +6,7 @@ Input data including reconciled Pfam tree files (Pfam_trees.zip) [1] and prokary
 
 - ClassifiedPFAMs.csv: contains the classifications of 8291 pfams run first through ClassifyingTrees.R then New_LUCAvspreLUCA.R scripts. 9 Pfams are now obsolete so were subsequently removed from the rest of the analysis leaving a total of 8282 pfams. Pfams with an average transfer rate > 0.6 as estimated by GeneRax have been reclassified as 'unclassifiable'
 - Pfam_contempAAC.csv and Pfam_data_ancestralAAC.csv contain the Pfams, final classifications, clans, sequence lengths and amino acid frequencies (contemporary and ancestral respectively)
+- Clan_data_ancestralAAC.csv contains the clans, their oldest ancestors, maximum sequence lengths and ancestral amino acid frequencies
 - ASR_AAC.R calculates the pfam ancestral amino acid frequencies from the .state files estimated by IQ-Tree ancestral sequence reconstruction (-asr option)
 - AminoAcid_properties.csv contains several amino acid associated metrics complied from various previous publications
 - ConservedSites.R Identifies 'conserved' regions in the pfam alignemnts that are ancestrally reconstructed.
