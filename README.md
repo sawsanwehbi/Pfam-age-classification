@@ -10,6 +10,7 @@ Input data including reconciled Pfam tree files (Pfam_trees.zip) [1] and prokary
 - ASR_AAC.R calculates the pfam ancestral amino acid frequencies from the .state files estimated by IQ-Tree ancestral sequence reconstruction (-asr option)
 - AminoAcid_properties.csv contains several amino acid associated metrics complied from various previous publications
 - ConservedSites.R Identifies 'conserved' regions in the pfam alignemnts that are ancestrally reconstructed.
+- AncientAminoAcidUsageAnalysis.R classifies clans into phylostrata and calculates the amino acid usage of LUCA and preLUCA clans. It also contains the code for plotting Figure 4  and supplementary figures 1-4 in the manuscript.
 - Bacdive_Oxygen_requirement.csv, prokaryotes_GC.csv and Environment_AAC.csv contains information about the oxygen tolerance, GC content and several other environmental conditions of prokaryotes used for the supplementary analysis in supp figures 2 and 4
 - DEEPTmhmm_consensusPfam.out , ancestral_DEEPtm_sites.csv and pfam_asr_aac_5seq0.4_DEEPTM.csv correspond to the predicted transmembrane Pfams (using DeepTMHMM), the sites in the pfam alignment that are embdedded in the membrane and their ancestral amino acid frequencies respectively.
 - MoodyPfams_probabilities.csv and LUCA_Moody_pathways.csv are files annotating Pfams based on how likely they are to be present in a LUCA full-gene protein classified by Moody et al., 2024 and their corresponding metabolic pathways.
